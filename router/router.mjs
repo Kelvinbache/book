@@ -1,12 +1,14 @@
 import { Router } from "express";
 import { methodGet } from "./get.mjs";
 import { methodPost } from "./post.mjs";
+import { validateBook } from "../errors/validate.mjs";
 
 class Routers {
   constructor() {
     this.router = Router();
     this.responseGet = methodGet.response();
     this.responsePost = methodPost.response();
+    this.validateBook = validateBook.validate();
   }
 
   methodGet() {
@@ -14,7 +16,7 @@ class Routers {
   }
 
   methodPost() {
-    return this.router.post("/", this.responsePost);
+    return this.router.post("/", this.validateBook, this.responsePost);
   }
 }
 
