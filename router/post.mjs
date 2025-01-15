@@ -1,8 +1,12 @@
+import { dbBooks } from "../db/sqlite.mjs";
+
 class ResponseMethod {
   response() {
     return function (req, res, next) {
       const { name, description } = req.body;
-      res.json({ name: name, description: description });
+      dbBooks.insert(name, description);
+
+      res.json({message:"send"})
     };
   }
 }

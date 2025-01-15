@@ -6,8 +6,9 @@ const app = express();
 
 //middleware
 app.use(express.json());
-app.use(express().disable("X-powered-by"));
+app.disable("x-powered-by");
 
+// The http 
 app.use(router.methodGet());
 app.use(router.methodPost());
 
