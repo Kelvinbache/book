@@ -1,0 +1,32 @@
+.form {
+    text-align: center;
+}
+
+.content-input {
+    display: flex;
+    flex-direction: column;
+    width: 25%;
+    gap: 9px;
+    padding: 20px;
+    background: lightblue;
+    margin-left: auto;
+    margin-right: auto;
+    height: 250px;
+}
+
+input:active{
+ border: none;
+}
+
+input:focus{
+    outline: none;
+}
+
+.featureBook {
+    resize: none;
+    height: 60px;
+}
+
+.fileBook {
+    
+}

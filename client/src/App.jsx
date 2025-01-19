@@ -1,20 +1,36 @@
 import "./css/App.css";
-import { BrowserRouter, Router } from "react-router-dom";
+import { BrowserRouter, Route, Routes, Link } from "react-router-dom";
 import { Home } from "./page/home";
+import { SaveBook } from "./page/SaveBook";
 
-
-// solution the problem between pages
-// create the form for save the book 
-// correct json responses 
+// create the form for save the book
+// correct json responses
 
 function App() {
   return (
-    <>
-      <BrowserRouter>
-          <Router path="/"> <Home /> </Router> 
-      </BrowserRouter>
-    </>
-  ) 
+    <BrowserRouter>
+      <Navigation />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/AddBook" element={<SaveBook />} />
+      </Routes>
+    </BrowserRouter>
+  );
 }
 
-export default App;
+function Navigation() {
+  return (
+    <nav className="navigation">
+      <ul>
+        <li>
+          <Link to="/">Home</Link>
+        </li>
+        <li>
+          <Link to="/AddBook">AddBook</Link>
+        </li>
+      </ul>
+    </nav>
+  );
+}
+
+export { App };
