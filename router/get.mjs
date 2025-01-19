@@ -1,6 +1,9 @@
 import { dbBooks } from "../db/sqlite.mjs";
 import { driveError } from "../errors/driveError.mjs";
 
+
+
+
 class ResponseMethod {
   response() {
     return function (req, res, next) {
@@ -13,6 +16,7 @@ class ResponseMethod {
       });
     };
   }
+
 }
 
 const methodGet = new ResponseMethod();
