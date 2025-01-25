@@ -1,9 +1,9 @@
-import { Form } from "../components/form";
+import { Forms } from "../components/form";
 
 export function SaveBook() {
   return (
     <>
-      <Form />
+      <Forms />
     </>
   );
 }

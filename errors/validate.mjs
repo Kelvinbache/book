@@ -7,7 +7,7 @@ class Book {
      const { name, description } = req.body;
 
       const book = z.object({
-        name: z.string(),
+        name: string(),
         description: string(),
       });
 

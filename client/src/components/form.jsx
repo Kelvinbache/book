@@ -1,23 +1,32 @@
-import { Component } from "react";
+import { apiPost } from "../api/reponse.mjs";
+import { Formik, Form, Field } from "formik";
 import "../css/form.css";
 
-export class Form extends Component {
-  constructor(props) {
-    super(props);
-  }
+//pass the code a function
+export const Forms = () => {
+  return (
+    <Formik
+      initialValues={{
+        name: " ",
+        description: " ",
+      }}
 
-  render() {
-    return (
-      <>
-        <form action="" method="post" className="form">
-            <fieldset className="content-input">
-                <input type="text" className="nameBook"required placeholder="Name of Book"/>
-                <textarea name="" id="" className="featureBook" required placeholder="The feature"></textarea>
-                <input type="file" className="fileBook" required accept=".pdf, .word" multiple></input>
-            </fieldset>
-            <button type="submit"> Save</button>
-        </form>
-      </>
-    );
-  }
-}
+      onSubmit={async(values) => {  
+         await new Promise ((r)=> setTimeout(r, 500))
+         apiPost(values).then(r => console.log(r))
+      }}
+    >
+  
+  {({isSubmitting}) => (
+      <Form className="form">
+        <fieldset className="content-input">
+          <Field type="text" name = "name" id="name" className="nameBook" required placeholder="Name of Book"/>
+          <Field name="description" id="description" className="featureBook" required placeholder="The feature" /> 
+          {/* <input type="file" className="fileBook" required accept=".pdf, .word" multiple></input> */}
+        </fieldset>
+        <button type="submit" disabled={isSubmitting}>Save</button>
+      </Form>
+  )}
+    </Formik>
+  );
+};

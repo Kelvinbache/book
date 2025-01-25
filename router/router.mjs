@@ -16,7 +16,7 @@ class Routers {
   }
 
   methodPost() {
-    return this.router.post("/", this.validateBook, this.responsePost);
+    return this.router.post("/AddBook", this.validateBook, this.responsePost);
   }
 }
 
