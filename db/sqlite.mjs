@@ -31,7 +31,8 @@ class DBBooks {
      CREATE Table books ( 
       books_id INTEGER PRIMARY KEY AUTOINCREMENT,
       books_name VARCHAR(8) NOT NULL,
-      books_description VARCHAR(30) NOT NULL
+      books_description VARCHAR(30) NOT NULL,
+      books_file BLOB
       )    
     
     `, this.drive.drive);

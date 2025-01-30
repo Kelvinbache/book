@@ -3,12 +3,14 @@ import { dbBooks } from "../db/sqlite.mjs";
 class ResponseMethod {
   response() {
     return function (req, res, next) {
+    
+      // const { name, description, file } = req.body;
 
-      const { name, description } = req.body;
-      
-      dbBooks.insert(name, description);
+      // dbBooks.insert(name, description);
 
-      res.json({message:"send"})
+      console.log(req.file)
+      res.json({ message: req.body });
+
     };
   }
 }

@@ -1,0 +1,30 @@
+.navigation {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  background: #2d3142;
+  height: 65px;
+}
+
+ul {
+    list-style: none;
+    display: flex;
+    gap: 11px;
+    margin-right: 20px;
+}
+
+li {
+  color: aliceblue;
+}
+
+a {
+  color: aliceblue;
+  text-decoration: none;
+}
+
+.card {
+    width: 30%;
+    margin: 20px 20px;
+    text-align: center;
+    border: 1px solid black;
+}
